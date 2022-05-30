@@ -1,0 +1,180 @@
+/*------------Defaults---------------*/
+nav,
+header,
+footer{
+	display: block;
+}
+
+/* if margin is not set, browser will add its own. So, in order to assure everything is stucked at edges properly*/
+body{
+	line-height: 1;
+	margin: 0;
+	background-color: #5ca5e9;
+}
+
+/*-------------Nav Bar---------------*/
+nav{
+	width: 100%;
+	margin: 0;
+}
+
+nav ul{
+	background-color: rgb(201, 201, 201) ;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	padding: 30px;
+	font-family:emoji;
+	text-align: center;
+}
+
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+	border-style: solid;
+}
+ul.topnav li{
+	list-style: none;
+	float: left;
+}
+
+
+ul.topnav li.topnav-right {
+	list-style: none;
+	float:right;
+}
+
+ul.topnav li a{
+	display: block;
+	text-decoration: none;
+	min-height: 16px;
+	text-align: center;
+	padding: 14px;
+	text-transform: uppercase;
+	color: black;
+}
+
+ul.topnav li a:hover{
+	background-color: grey;
+	color: white;
+}
+
+ul.topnav li.dropdownIcon{
+	display: none;
+}
+
+/*------MOBILE-------------- @ allows the browser to detect media screens and display widths*/
+
+@media screen and (max-width: 680px){
+	ul.topnav li:not(:nth-child(1)){
+		display: none;
+	}
+
+	ul.topnav li.dropdownIcon{
+		display: block;
+		float: right;
+	}
+
+	ul.topnav.responsive li.dropdownIcon{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	ul.topnav.responsive{
+		position: relative;
+	}
+
+	ul.topnav.responsive li{
+		display: inline;
+		float: none;
+	}
+
+	ul.topnav.responsive li a{
+		display: block;
+		text-align: left;
+	}
+}
+
+/*-----------DIV ELEMENT----------*/
+.myDiv {
+	/*border: 5px outset red;*/
+	background-color: rgb(18, 162, 219);
+	text-align: center;
+	color: white;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	
+  }
+
+  /*---------FORM---------------*/
+
+  * {
+	box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+	width: 100%;
+	/*padding: 12px;*/
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+  }
+  
+  label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+  }
+  
+  input[type=submit] {
+	background-color: #04AA6D;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+  }
+  
+  input[type=submit]:hover {
+	background-color: #45a049;
+  }
+  
+  .container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+  }
+  
+  .col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+  }
+  
+  .col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:right {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.col-25, .col-75, input[type=submit] {
+	  width: 100%;
+	  margin-top: 0;
+	}
+  }
+
