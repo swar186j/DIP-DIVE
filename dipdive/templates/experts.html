@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DIP DIVE: Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+.doc_table .doc .card {
+    padding-top: 18px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 16px;
+}
+
+#expbtn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  background-color: #00b1f1;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.doc{
+    padding-left: 10px;
+}
+.icon{
+    font-size: 15px;
+}
+
+</style>
+</head>
+<body>
+    <h1 style="font-size: 23px;"><b>Talk to experts</b></h1>
+    <p style="font-size: 16px;">Speak franckly and get solution in real time</p><br>
+<table class="doc_table" align="center">
+    <tr>
+        <td class="doc">
+            <div class="card">
+                <img src="static\images\doctor1.jpg" alt="John" style="width:30%">
+                <h1>Dr. Kalpana Raval</h1>
+                <p class="title">Psychiatrist</p>
+                <p>Pune, Maharashtra</p>
+                <a href="#"><i class="fa fa-dribbble icon"></i></a>
+                <a href="#"><i class="fa fa-twitter icon"></i></a>
+                <a href="#"><i class="fa fa-linkedin icon"></i></a>
+                <a href="#"><i class="fa fa-facebook icon"></i></a>
+                <p><button id="expbtn">Contact: 096894 90022</button></p>
+              </div>
+        </td>
+        <td class="doc">
+            <div class="card">
+                <img src="static\images\doctor2.jpg" alt="John" style="width:30%">
+                <h1>Dr. Rohan Jahagirdar</h1>
+                <p class="title">Psychiatrist</p>
+                <p>Pune, Maharashtra</p>
+                <a href="#"><i class="fa fa-dribbble icon"></i></a>
+                <a href="#"><i class="fa fa-twitter icon"></i></a>
+                <a href="#"><i class="fa fa-linkedin icon"></i></a>
+                <a href="#"><i class="fa fa-facebook icon"></i></a>
+                <p><button id="expbtn">Contact: 080 4803 4070</button></p>
+              </div>
+        </td>
+
+        <td class="doc">
+            <div class="card">
+                <img src="static\images\doctor1.jpg" alt="John" style="width:30%">
+                <h1>Blissful Mind Therapy Centre</h1>
+                <p class="title">Psychiatrist</p>
+                <p>Mumbai, Maharashtra</p>
+                <a href="#"><i class="fa fa-dribbble icon"></i></a>
+                <a href="#"><i class="fa fa-twitter icon"></i></a>
+                <a href="#"><i class="fa fa-linkedin icon"></i></a>
+                <a href="#"><i class="fa fa-facebook icon"></i></a>
+                <p><button id="expbtn">Contact: 091671 19135</button></p>
+              </div>
+        </td>
+        <td class="doc">
+            <div class="card">
+                <img src="static\images\doctor2.jpg" alt="John" style="width:30%">
+                <h1>Dr. Sunay Pradhan</h1>
+                <p class="title">Psychiatrist</p>
+                <p>Mumbai, Maharashtra</p>
+                <a href="#"><i class="fa fa-dribbble icon"></i></a>
+                <a href="#"><i class="fa fa-twitter icon"></i></a>
+                <a href="#"><i class="fa fa-linkedin icon"></i></a>
+                <a href="#"><i class="fa fa-facebook icon"></i></a>
+                <p><button id="expbtn">Contact: 098213 59650</button></p>
+              </div>
+        </td>
+        
+
+    </tr>
+</table>
+
+
+</body>
+{% endblock %}

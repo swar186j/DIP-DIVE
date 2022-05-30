@@ -1,0 +1,77 @@
+{% extends "diagnose.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/detect.css')}}">
+    <title>DIP DIVE: Result</title>
+</head>
+
+<body > 
+  <p style="font-size: 35px; color: black;"><i><b>Level of depression prediction result</b></i></p>
+  <br><br>
+<h1 style="font-size: 25px;"><b>Depression result:</b></h1><br>
+
+
+<div class="w3-container">
+ <!--TEXT DEPRESSION-->
+    <div style="margin-bottom: 15px;
+  padding: 4px 12px; margin-left:25%; width:50%; height: 60px; ">
+    {% if text_dep== 0 %}
+    <div style="background-color: #ddffdd; margin: 0px 0px;
+    border-left: 6px solid #04AA6D; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Text Depression : 'No depression detected'</p></div>
+    {% else %}
+    <div style="background-color: #fdd0d0; margin: 0px 0px;
+    border-left: 6px solid #f44336; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Text Depression : 'Depression detected'</p></div>
+    {% endif %}
+    </div>
+
+
+
+     <!--AUDIO DEPRESSION-->
+     <div style="margin-bottom: 15px;
+     padding: 4px 12px; margin-left:25%; width:50%; height: 60px; ">
+    {% if speech_dep==0 %}
+    <div style="background-color: #ddffdd; margin: 0px 0px;
+    border-left: 6px solid #04AA6D; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Speech Depression : 'No depression detected'</p></div>
+    {% else %}
+    <div style="background-color: #fdd0d0; margin: 0px 0px;
+    border-left: 6px solid #f44336; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Speech Depression : 'Depression detected'</p></div>
+    {% endif %}
+    </div>
+
+
+<!--VIDEO DEPRESSION-->
+    <div style="margin-bottom: 15px;
+     padding: 4px 12px; margin-left:25%; width:50%; height: 60px; ">
+    {% if vid_dep== 0 %}
+    <div style="background-color: #ddffdd; margin: 0px 0px;
+    border-left: 6px solid #04AA6D; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Video Depression : 'No depression detected'</p></div>
+    {% else %}
+    <div style="background-color: #fdd0d0; margin: 0px 0px;
+    border-left: 6px solid #f44336; width: 100%; height: 100%; size-adjust:inherit ;
+   position: initial; font-size: 18px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><p>Video Depression : 'Depression detected'</p></div>
+    {% endif %}
+  </div>
+
+
+<br>
+<p style="font-size: 25px;"><b>Aggregate:</b><br><br>
+<div style="  background-color: #ffffcc;
+border-left: 6px solid #f2e03f; position: relative; margin-left:25%; margin-bottom: 15px; width:50%; height: 60px;font-size: 20px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 4px 12px;">
+
+  {{ score }}
+</p>
+</div>
+
+</body>
+
+{% endblock %}

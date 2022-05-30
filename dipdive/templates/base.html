@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/c11e24e528.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="./static/images/DIP-DIVE_favicon.png">
+</head>
+
+<body style='background-image: url("./static/images/gradient.png");'>
+<section class="hero is-fullheight">
+<!--background-color:#5ca5e9-->
+    <div class="hero-head" style="color:white ">
+        <nav class="navbar" style="background-color:#041150;">
+            <div class="container">
+
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item"><b>DIP-DIVE</b></div>
+                    </div>
+
+                <div class="navbar-end"> 
+                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                            <i class="fa-solid fa-house nav__icon"></i>
+                            <span class="nav__text">Home</span>
+                          </a>
+                          
+                          <a href="{{ url_for('main.about') }}" class="navbar-item">
+                            <i class="fa-solid fa-circle-info nav__icon"></i>
+                            <span class="nav__text">About</span>
+                          </a>
+
+                        <a href="{{ url_for('main.faq') }}" class="navbar-item">
+                            <i class="fa-regular fa-circle-question nav__icon"></i>
+                            <span class="nav__text">FAQ</span>
+                        </a>
+                        
+                        <a href="{{ url_for('main.que') }}" class="navbar-item">
+                            <i class="fa-solid fa-file-circle-question nav__icon"></i>
+                            <span class="nav__text">Test</span>
+                        </a>
+
+                          {% if current_user.is_authenticated %}
+                          <a href="{{ url_for('main.diagnose') }}" class="navbar-item">
+                            <i class="fa-solid fa-clipboard-check nav__icon"></i>
+                            <span class="nav__text">Diagnose</span>
+                          </a>
+
+                        <a href="{{ url_for('main.experts') }}" class="navbar-item">
+                            <i class="fa-solid fa-user-doctor nav__icon"></i>
+                            <span class="nav__text">Experts</span>
+                        </a>                        
+                          
+                        <div class="dropdown-item">
+                            <div class="imgBox"  onclick="myFunction()">
+                                <i class="fa-regular fa-user nav__icon"></i><i class="fa fa-caret-down nav__icon"></i>
+                            </div>
+                        
+                            <div class="dropdown-content">
+                                <div class="content">
+                                    <div class="name">User</div>
+                                </div>
+                                <ul class="links">
+                                    <li><a href="{{ url_for('main.profile') }}"><i class="fa fa-user" aria-hidden="true"></i> My Profile</a></li>
+                                    <div class="divider"></div>
+                                    <li><a href="{{ url_for('auth.edit_profile') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Profile</a></li>
+                                    <div class="divider"></div>
+                                    <li><a href="{{ url_for('auth.reset') }}"><i class="fa fa-cogs" aria-hidden="true"></i> Reset Password</a></li>
+                                    <div class="divider"></div>
+                                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                            {% endif %}
+                
+                            {% if not current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                <i class="fa-solid fa-arrow-right-to-bracket nav__icon"></i>
+                                <span class="nav__text">Login</span>
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                <i class="fa-solid fa-user-plus nav__icon"></i>
+                                <span class="nav__text">Signup</span>
+                            </a>   
+                            {% endif %}           
+                    </div>
+                </div>  
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        
+        <div class="container has-text-centered">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="container_c">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="\static\images\DIP-DIVE_favicon.png" width="70px" height="70px" alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat support</h4>
+                            <p class="chatbox__description--header">Hi. I am DiveBot. How may I assist?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" name="input" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                </div>
+            </div>
+        </div>
+        
+        
+</section>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/app.js') }}"></script>
+
+
+</div>
+<script>
+
+    function myFunction() {
+        var dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.classList.toggle('dropdown-toggle');
+    }
+
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-item')) {
+    var dropdowns = document.getElementsByClassName(".dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('dropdown-toggle')) {
+        openDropdown.classList.remove('dropdown-toggle');
+      }
+    }
+  }
+}
+	
+</script>
+
+
+<footer align="center">
+    <div>
+        <table cellpadding="5px" width="100%" cellspacing="5px" align="center">
+        <td>{% block footer %}
+            &copy; Copyright 2022 by
+            <a style="color: rgb(255, 255, 255); " href="{{ url_for('main.index') }}">DIP-DIVE.<h3>
+                 
+                {% endblock %}</h3></a>
+        </td>	
+        <td>
+            <a style="color: rgb(255, 255, 255); " href="/about">About</a>
+        </td>
+        <td>
+            <a style="color: rgb(255, 255, 255); " href="/terms">Terms and conditions</a>
+        </td>
+        <td>
+            <a style="color: rgb(255, 255, 255); " href="/contact">Contact us</a>
+        </td>
+    </table>
+    
+    </footer>
+
+</body>
+
+</html>
+
+
+

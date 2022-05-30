@@ -1,0 +1,39 @@
+{% extends "diagnose.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DIP DIVE: Video</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detect.css')}}">
+</head>
+ 
+<body>
+  <div class="myDiv1">
+      <h1>Depression Detection using Visual Data</h1>
+  </div><br>
+
+<form action="{{url_for('main.video')}}" method="POST" enctype="multipart/form-data">
+
+  <div class="w3-card-4 w3-margin">
+    <img src="{{ url_for('main.video_stream') }}" alt="Alps" style="width:75%">
+    <div class="w3-container w3-center">
+      <p>Real Time Video Streaming</p>
+    </div>
+  </div>
+</form>
+
+
+<form action="{{url_for('main.video_result')}}" method="POST" enctype="multipart/form-data">
+     <input name="sub" type="submit" value="PREDICT">
+	
+</form>
+	
+
+</body>
+
+</html>
+
+
+{% endblock %}

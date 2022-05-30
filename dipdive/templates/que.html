@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="static/css/que.css">
+    <!-- Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <!-- start Questionnaire button -->
+    <div>
+    <img src=".\static\images\imgage.png" alt="Snow" style="width:100%; height: 100%;">
+    <div class="start_btn"><button>Questionnaire</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Instructions:</span></div>
+        <div class="info-list">
+            <div class="info">1. You are requested to give honest answers.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't exit from the questionnaire while you're attempting.</div>        </div>
+        <div class="buttons">
+            <button class="quit" >Exit</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+    
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Dip-dive Questionairre</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!--  options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer class="foot">
+            <div class="total_que">
+                <!--  Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="complete_text">You've completed the Questionairre!</div>
+        <div class="score_text">
+            <!-- Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <a class="restart" href="{{url_for('main.diagnose')}}">Diagnose</a>
+            <a class="quit" href="{{url_for('main.index')}}" >Quit Quiz</a>
+        </div>
+    </div>
+
+    <!-- Questions and Options only -->
+    <script src="./static/javascript/questions.js"></script>
+
+    <!-- all Quiz Codes -->
+    <script src="./static/javascript/script.js"></script>
+</div>
+</body>
+</html>
+
+
+{% endblock %}

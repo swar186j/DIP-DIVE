@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+  <link rel="stylesheet" href="./static/css/profile.css">
+  <title>DIP DIVE: Profile</title>
+  <link rel="icon" type="image/x-icon" href="./static/images/DIP-DIVE_favicon.png">
+    
+</head>
+
+<body>
+        <div class="wrapper" align="center">
+          <div class="left">
+            <i class="fa-solid fa-user user__icon"></i>
+            <!--i class="fa-solid fa-circle-user user__icon"--></i>
+            <!--i class="fa-solid fa-user-check user__icon"--></i> 
+              <h4 style="font-size: larger;"><b>{{name}}</b></h4>
+          </div>
+
+          <div class="right">
+            <h1 class="title" >
+              <b>Welcome, {{name}}!</b>
+            </h1>
+            
+              <div class="info">
+                  <h3>Information</h3>
+                  <div class="info_data">
+                       <div class="data">
+                          <h4>Name</h4>
+                          <p>{{name}}</p>
+                       </div>
+                       <div class="data">
+                         <h4>id</h4>
+                          <p>{{id}}</p>
+                    </div>
+                  </div>
+                  <div class="info_data">
+                    <div class="data">
+                       <h4>Email</h4>
+                       <p>{{email}}</p>
+                    </div>
+                    <div class="data">
+                      <h4>Phone</h4>
+                       <p>{{mobile}}</p>
+                 </div>
+               </div>
+             
+              <div class="info_data">
+                <div class="data">
+                   <h4>Age</h4>
+                   <p>{{age}}</p>
+                </div>
+                <div class="data">
+                  <h4>City</h4>
+                   <p>{{city}}</p>
+             </div>
+           </div>
+          </div>
+        
+            <div class="user_data">
+                  <h3>HISTORY</h3>
+                  <div class="usr">
+                       <div class="data">
+                          <h4>View</h4>
+                          <button id="myBtn" onclick="location.href='/view'">View</button>
+                       </div>
+                       <div class="data">
+                         <h4>Download</h4>
+                         <button id="myBtn" class="history"  onclick="location.href='/set'" >Download</button>
+                    </div>
+                  </div>
+              </div>
+         </div>
+         </div> 
+         <div style="height: 460px;"></div> 
+</body>
+</html>
+
+ {% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <head>
+        
+    <style>
+    .view_h {       
+    position: absolute;
+    font-size: 100%;
+    align-self: center;
+    z-index: 15;
+    top: 10%;
+    left: 10%;
+    width: max-content;
+    background: rgb(188, 218, 245);
+    }
+    </style>             
+    </head>
+    <body>
+    {% block content %}
+        <h1 style="font-size: 20px;"><b>Your History</b></h1><br>
+        <div align="center">
+            <div class="view_h">
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables %}
+                    <h2>{{titles[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
