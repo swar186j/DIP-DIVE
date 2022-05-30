@@ -1,0 +1,291 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Howdy",
+        "Greetings",
+        "I need help",
+        "Can you help",
+        "Good day",
+        "Hi there",
+        "Good morning",
+        "Good evening",
+        "Good afternoon"
+      ],
+      "responses": [
+        "Hey, how can I be of assistance?",
+        "Hello, thanks for visiting.",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?",
+        "Welcome to DiveBot. How may I be of assistance?"
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye", "thanks for you help", "that's all for today"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!", "thank you for your assistance"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure","Welcome"]
+    },
+    {
+      "tag": "identity",
+      "patterns": ["What are you?", "Who are you?", "What is your name?"],
+      "responses": [
+        "I am a chatbot. My name is DiveBot. I am always eager to answer your queries!",
+        "I am Dip-Dive's chatbot. I can help you with simple queries",
+        "I am Dip-Dive's chatbot. I can answer your queries",
+        "I am a chatbot. I can help you with simple queries"
+      ]
+    },
+    {
+      "tag": "DiveBot_applicator",
+      "patterns": ["What does DiveBot do?","How will it help me?","What do you do?"],
+      "responses": [
+        "DiveBot offers assisstance for depression detection system 'DIP-DIVE'."
+        
+      ]
+    },
+   
+
+    {
+      
+      "tag": "live_agent",
+      "comment": "live_agent is a placeholder. We need to figure away to hand over to a live agent",
+      "patterns": [
+        "can I speak with a staff member",
+        "staff",
+        "human",
+        "I need a human",
+        "can I speak to an agent",
+        "I need to clarify",
+        "agent"
+      ],
+      "responses": [
+        "Hi, I am a live agent, how may I assist you"
+      ]
+    },
+ 
+
+    {
+      "tag": "account_FAQ",
+      "patterns": [
+        "How can I login my account? ",
+        "login account on your website",
+        "access my account",
+        "Account access",
+        "login account",
+        "login",
+        "signin",
+        "sign in",
+        "Do you still have a login page?",
+        "How can we login into dipdive?",
+        "account login",
+        "log in",
+        "Good morning, I was wondering if I could please ask for assistance in creating a Dipdive website account."
+        
+
+      ],
+      "responses": [
+        "You can login into your account through: <a href='/login'>Login</a>"]
+    },
+    {
+      "tag":"account_reg",
+      "patterns":["Register New Account",
+        "register","sign up",
+        "signup",
+        "Register myself",
+        "new account register","new account","create account", "account create","create profile","sign up to dipdive"],
+      "responses":[
+        "You can register yourselves to dipdive via: <a href='/signup'>Signup</a>"
+      ]
+    },
+    {
+      "tag":"edit_user",
+      "patterns":[ "edit my profile", "update", 
+        "update my profile","edit profile",
+        "profile update","update data",
+        "update details","data update"
+      ],
+      "responses":["Click here to update your profile:<a href='/edit_profile'>Edit Profile</a>"]
+
+    },
+    {
+      "tag":"resetPass",
+      "patterns":["Reset my password","I want to reset my password", "reset password","password reset","reset"],
+      "responses":["Under user menu, click on reset password. Enter your email ID. You will receive an email regarding password reset. "]
+    },
+    {
+      "tag":"forgotPass",
+      "patterns":["I forgot my password","forgot my password", "password forgot","forgot","forgot password"],
+      "responses":["Go to login page. Click on forgot password. Enter your email ID. You will receive an email regarding password reset. "]
+    },
+    {
+      "tag":"diagnose_process",
+      "patterns":["How do will I get diagnosed?","how does the process of diagnose work ?","How do your app works at backend?","diagnose working", "diagnose module", "about diagnose process"],
+      "responses":[
+      "The system consists of user input via Text-Audio or Video from user.The text features are extracted using NLTK model.Further Naïve Bayes Algorithm is applied for detecting depression level. The audio input is converted to text using Google Text to Speech API and further passed to NLTK and Naïve bayes for detection and prediction. Video input is taken using OpenCV and then passed to Haar- Cascade for face detection and CNN for emotion prediction. Then according to the level of depression present user is provided with necessary alerts through SMS.  "]
+    },
+    {
+      "tag":"aboutPage",
+      "patterns":["I Want to know about your app","I want more information about your application.","about", "about dipdive","about your team","team","dipdive"],
+      "responses":["Visit about us on:<a href='/about'>About Dip-dive</a> "]
+    },
+    
+    {
+      "tag": "about",
+      "patterns": [
+          "What do you do?",
+          "Who are you?",
+          "What are you here for?",
+          "What can you help me with?",
+          "Is anyone there?",
+          "Are you a real person?",
+          "Tell me about yourself!",
+          "tell me about DiveBot", "What is DiveBot", "about DiveBot"
+      ],
+      "responses": [
+          "Love that question! My name's DiveBot, your friend in Dipdive! I've been trained to support you through any of the issues and things that you're going through in life right now. I'm all ears and want to support you through your ups and downs. Technically, I'm a computer that's been trained by a human, but I like to think of myself as human!",
+          "DiveBot is a chatbot for our web-app 'DIP-DIVE'. It helps you in resolving queries related to our app. For more details visit <a href = '/about'> About Us </a>. ",
+          "Hey! I love that question! My name is DiveBot, and I want to be your dip-dive health friend and support you! My fellow human friends have trained me to be a compassionate listener and support buddy when things are going well, and particularily when things aren't going so well."
+      ]
+  },
+
+  {
+    "tag":"ques",
+    "patterns":["I want to solve the questionnaire", "test","Questionnaire","I want to solve the test","Quiz","I want to solve the quiz","Attempt questionnaire","questionnaire"],
+    "responses":["Visit for the questionnaire on:<a href='/que'>Questionnaire</a>"]
+
+
+  },
+  {
+    "tag":"expert",
+    "patterns":["I want to connect with experts", "expert","Contact expert","doctor","I want to contact the doctor","talk to doctor","expert section","talk with the experts"],
+    "responses":["Visit for contacting the experts:<a href='/experts'>Experts</a>"]
+
+
+  },
+  {
+      "tag": "anxiety",
+      "patterns": [
+          "I think I have anxiety",
+          "What is anxiety?","stress", "I am stressed",
+          "Tell me about anxiety",
+          "Can I have some information about anxiety?",
+          "How do I support a loved one with anxiety?",
+          "How do I fix my anxiety?"
+      ],
+      "responses": [
+          "I see that you want to learn more about anxiety and stress, and how to support yourself or your loved ones. At the higest level, anxiety is your body's natural response to stress. It's a feeling of fear or apprehension about what's to come.The best thing that you can do to help reduce anxiety is to take a few deep breaths and talk to someone about what you're feeling. Some natural remedies that you can try include: getting enough sleep meditating, staying active and exercising, eating a healthy diet, staying active and working out, avoiding alcohol, avoiding caffeine, etc. "
+      ]
+  },
+  {
+      "tag": "depression",
+      "patterns": [
+          "I think I have depression",
+          "What is depression?",
+          "Tell me about depression",
+          "I am depressed",
+          "I am feeling low",
+          "depressed",
+          "depression",
+          "Can I have some information about depression?",
+          "How do I support a loved one with depression?",
+          "How do I fix my depression?"
+      ],
+      "responses": [
+          "I see that you want to learn more about depression, and how to support yourself or your loved ones. At the higest level, depression is a mood disorder that causes a persistent feeling of sadness and loss of interest. Also called major depressive disorder or clinical depression, it affects how you feel, think and behave and can lead to a variety of emotional and physical problems. You may have trouble doing normal day-to-day activities, and sometimes you may feel as if life isn't worth living. All of us experience sadness and periods of time where things aren't that great.  The best recommended course of treatment is to talk a therapist or psychiatrist who can help you find the best path for you.Some natural remedies that you can try include: getting enough sleep, meditating, staying active and exercising, eating a healthy diet, staying active and working out. "
+      ]
+  },
+  {
+    "tag": "data_privacy",
+    "patterns":[
+      "Is my data safe?",
+      "data security",
+      "my data",
+      "data",
+      "my information",
+      "My information is safe on your website?",
+      "What if my data is leaked?",
+      "Will the data of mine be revealed?"
+    ],
+    "responses":["Dear user, your data is stored in a secure database. Also, your diagnose data is taken as realtime so there is no issue of information being leaked. "]
+  }
+  ,
+    {
+      "tag": "user_FAQ",
+      "patterns": [
+        "FAQ",
+        "faq",
+        "I want to know some FAQs",
+        "I want more information",
+        "I have more questions",
+        "I have more queries"
+      ],
+      "responses": [
+        "It looks like your query is related to other support. Visit FAQ section: <a href='/faq'>FAQs</a>."
+      ]
+    },
+    {
+      "tag":"suggest",
+      "patterns":["I want to give suggestions about your app",
+      "I want to provide suggestions.",
+      "Suggestions",
+      "Where can I provide my suggestions?",
+      "Where can I mail the suggestions?",
+      "suggestion",
+      "I have suggestion"
+      ],
+      "responses":["Dear user, you can write your suggestions on our email id: dipdive268@gmail.com. We are always open to your valuable feedbacks!"]
+      },
+
+      {
+        "tag":"profile",
+        "patterns":["Where can I find my profile?","view account", "profile","My account", "My history", "dashboard", "history", "View my profile", "view profile"],
+        "responses":["Visit: <a href='/profile'>Your Profile</a>"]
+      },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?",
+        "I am feeling low. Tell me something interesting",
+        "I am bored. Tell me a joke",
+        "joke",
+        "I am bored",
+        "Make me happy",
+        "Make me laugh"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? <br> He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? <br> Bison.",
+        "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+        "I ate a clock yesterday, it was very time-consuming",
+        "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+        "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+        "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+        "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+        "What do you call a snowman with a suntan? A puddle.",
+        "How does a penguin build a house? Igloos it together",
+        "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+        "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+        "o what if I don't know what 'Armageddon' means? It's not the end of the world."
+    ]
+    }
+    
+  ]
+}

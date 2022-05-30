@@ -1,0 +1,21 @@
+Tools and technologies:
+
+Tools:
+IDE: Visual Studio Code
+Input tools: Webcam, Microphone Keyboard and Mouse 
+Version Control: Git
+UML Diagram: canva.com, draw.io 
+Documentation: MS Word
+SMS Services: TWILIO REST API
+
+Technologies:
+Python: 3.9.5
+Flask 
+pytorch
+ML libraries(numpy, pandas,etc)
+Pytest
+OpenCV
+UI and Web development frameworks: HTML, CSS, Javascript
+Database: SQLite
+Server: http://127.0.0.1:/5000
+
